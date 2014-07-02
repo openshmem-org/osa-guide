@@ -337,37 +337,42 @@ together with the source code.
 The messages contain the line number and the source file name of the
 \openshmem call that is triggering the warning.
 
-\subsection{Analysis available in the \openshmem Analyzer}
+\begin{minipage}{\linewidth}
 
-The \openshmem Analyzer is able to perform the following analysis:
+  \subsection{Analysis available in the \openshmem Analyzer}
 
-\vspace{0.1in}
+  The \openshmem Analyzer is able to perform the following analyses:
 
-\begin{itemize}
-\item Check the ordering of \openshmem initialization and finalization
-  calls.
-\item Check if there is an \openshmem initialization call in the
-  program.
-\item Check if there are more than one \openshmem initialization call.
-\item Check if \openshmem calls are using symmetric memory variables
-\item Check if the \openshmem calls arguments are of the correct types
-  or storage allocation for \openshmem typeless calls.
-\item Check for out-of-bounds access for arrays in \openshmem calls.
-\item Check for out-of-bounds strided access of arrays.
-\item Check if one of the arguments of the \openshmem calls evaluates
-  to NULL.
-\item Perform constant propagation and common sub-expression
-  elimination to simplify the arguments of an \openshmem call. This is
-  useful to check if some arguments evaluate to constants or to
-  simplify the analysis and accuracy of the tool.
-\item Check if pointers to symmetric data are allocated with shmalloc
-  calls
-\item Check if any variables used in expression for pointer arithmetic
-  of symmetric variables are initialized.
-\item Check if global pointers to symmetric data are initialized.
-\item Check if pointers to symmetric data are aliased with other
-  pointers that can have side-effects to the \openshmem call.
-\end{itemize}
+  \vspace{0.1in}
+
+  \begin{itemize}
+  \item Check the ordering of \openshmem initialization and
+    finalization calls.
+  \item Check if there is an \openshmem initialization call in the
+    program.
+  \item Check if there is more than one \openshmem initialization
+    call.
+  \item Check if \openshmem calls are using symmetric memory variables
+  \item Check if the \openshmem calls arguments are of the correct
+    types or storage allocation for \openshmem typeless calls.
+  \item Check for out-of-bounds access for arrays in \openshmem calls.
+  \item Check for out-of-bounds strided access of arrays.
+  \item Check if one of the arguments of the \openshmem calls
+    evaluates to NULL.
+  \item Perform constant propagation and common sub-expression
+    elimination to simplify the arguments of an \openshmem call. This
+    is useful to check if some arguments evaluate to constants or to
+    simplify the analysis and accuracy of the tool.
+  \item Check if pointers to symmetric data are allocated with
+    shmalloc calls
+  \item Check if any variables used in expression for pointer
+    arithmetic of symmetric variables are initialized.
+  \item Check if global pointers to symmetric data are initialized.
+  \item Check if pointers to symmetric data are aliased with other
+    pointers that can have side-effects to the \openshmem call.
+  \end{itemize}
+
+\end{minipage}
 
 \subsection{The \openshmem Analyzer Warnings messages}
 
