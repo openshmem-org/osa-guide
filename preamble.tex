@@ -1,0 +1,40 @@
+\documentclass[11pt,english]{article}
+\usepackage[T1]{fontenc}
+
+\usepackage{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=3cm,rmargin=3cm}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{OpenSHMEM Analzyer Guide}
+\lhead{DRAFT}
+\cfoot{\thepage}
+
+\usepackage[english]{babel}
+\usepackage{graphicx}
+
+\usepackage{fancybox}
+
+\usepackage[unicode=true]{hyperref}
+
+\usepackage[parfill]{parskip}
+
+\usepackage[usenames,dvipsnames,svgnames,x11names]{xcolor}
+\definecolor{ListingBG}{rgb}{0.91,0.91,0.91}
+
+\usepackage{listings}
+\lstset {
+  basicstyle=\scriptsize\ttfamily,
+  backgroundcolor=\color{ListingBG},
+  keywordstyle=\color{blue}\textbf,
+  frame=tlBR,
+  language=C,
+}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\usepackage{xspace}
+\newcommand{\openshmem}{\mbox{OpenSHMEM}\xspace}
+
+\usepackage{alltt}
