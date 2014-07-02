@@ -122,19 +122,19 @@ following are the main drivers/compilers:
 \vspace{0.1in}
 
 In order to prepare your program, you must add the following flags:
--OSA -O3 for the compile (-c) and link commands as follows.
+-shmem-analyzer -O3 for the compile (-c) and link commands as follows.
 
 \subsubsection*{Compile commands:}
 
 \begin{lstlisting}[language=bash]
-  $ uhcc -OSA -O3 -c myfile.c
-  $ uhcc -OSA -O3 -c myfile2.c
+  $ uhcc -shmem-analyzer -O3 -c myfile.c
+  $ uhcc -shmem-analyzer -O3 -c myfile2.c
 \end{lstlisting}
 
 \subsubsection*{Link command:}
 
 \begin{lstlisting}[language=bash]
-  $ uhcc -OSA -O3 myfile.o myfile2.o -o myprogram 
+  $ uhcc -shmem-analyzer -O3 myfile.o myfile2.o -o myprogram 
 \end{lstlisting}
 
 Note: To avoid long compilation times, the less aggressive
@@ -143,9 +143,9 @@ optimization flag -O2 can be used instead.
 In this example, the \openshmem Analyzer will generate a
 series of files with extensions: html, gif, dot, map, msg.
 
-The -OSA flag will allow additional information to be passed into the
-analyzer in future, so that specific language- and library-based
-analyses can be selected.
+This flag will, in future, allow additional information to be passed
+into the analyzer, so that analyses specific to a language or library
+can be selected.
 
 \subsection{Using the \openshmem Analyzer}
 
@@ -161,7 +161,7 @@ The \openshmem Analyzer creates several files with different extensions.
 The following command:
 
 \begin{lstlisting}[language=bash]
-  $ uhcc -OSA -O2 myfile.c -o myprogram
+  $ uhcc -shmem-analyzer -O2 myfile.c -o myprogram
 \end{lstlisting}
 
 will generate the following files:
