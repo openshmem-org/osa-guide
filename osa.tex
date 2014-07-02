@@ -21,9 +21,10 @@ of hyperlinks to navigate to the source code and warning messages.
 
 This manual is a user's guide only. Users are expected to have a basic
 knowledge of the structure of programs and some experience with C and
-\openshmem programming. The \openshmem Analyzer is available on Red Hat
-/ SUSE systems with x86/x86-64 processors. It is assumed that users
-are familiar with the basic commands on these systems.
+\openshmem programming. The \openshmem Analyzer is available on most
+GNU/Linux distributions (e.g.\ Red Hat and SUSE) with x86/x86-64
+processors. It is assumed that users are familiar with the basic
+commands on these systems.
 
 \subsection*{Organization}
 
@@ -121,26 +122,30 @@ following are the main drivers/compilers:
 \vspace{0.1in}
 
 In order to prepare your program, you must add the following flags:
--osa -O3 for the compile (-c) and link commands as follows.
+-OSA -O3 for the compile (-c) and link commands as follows.
 
 \subsubsection*{Compile commands:}
 
 \begin{lstlisting}[language=bash]
-  $ uhcc -osa -O3 -c myfile.c
-  $ uhcc -osa -O3 -c myfile2.c
+  $ uhcc -OSA -O3 -c myfile.c
+  $ uhcc -OSA -O3 -c myfile2.c
 \end{lstlisting}
 
 \subsubsection*{Link command:}
 
 \begin{lstlisting}[language=bash]
-  $ uhcc -osa -O3 myfile.o myfile2.o -o myprogram 
+  $ uhcc -OSA -O3 myfile.o myfile2.o -o myprogram 
 \end{lstlisting}
 
-Note: To avoid long compilation times, the less aggressive flag -O2
-can be used.
+Note: To avoid long compilation times, the less aggressive optimiztion
+flag -O2 can be used instead.
 
 In this example, the \openshmem Analyzer will generate a
 series of files with extensions: html, gif, dot, map, msg.
+
+The -OSA flag will allow additional information to be passed into the
+analyzer in future, so that specific language- and library-based
+analyses can be selected.
 
 \subsection{Using the \openshmem Analyzer}
 
@@ -156,7 +161,7 @@ The \openshmem Analyzer creates several files with different extensions.
 The following command:
 
 \begin{lstlisting}[language=bash]
-  $ uhcc -osa -O2 myfile.c -o myprogram
+  $ uhcc -OSA -O2 myfile.c -o myprogram
 \end{lstlisting}
 
 will generate the following files:
