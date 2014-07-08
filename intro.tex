@@ -1,0 +1,38 @@
+\section{Introduction}
+\label{chapter:introduction}
+
+In this chapter we give an overview of the overall features of the
+\openshmem Analyzer and describe the structure of the system.
+
+\subsection{Major Goals of the \openshmem Analyzer}
+
+Whenever application software is developed or ported to \openshmem
+from a new or an existing one, the source code must be carefully
+analyzed in order to understand many details of the current
+implementation while at the same time avoid common errors in
+\openshmem applications. The \openshmem Analyzer is a tool to support
+an application developer or code owner who wishes to understand their
+C application better. It provides a range of information including the
+structure of a source program in a graphical browseable form. The
+current input languages for the \openshmem Analyzer are C/C++,
+\openshmem API 1.0.
+
+\openshmem is a standard for SHMEM library implementations. Many SHMEM
+libraries exist but they do not conform to a particular standard and
+have similar but not identical APIs and behavior, which hinders
+portability. However, significant user efforts are required to
+parallelize serial codes with \openshmem or further analyze and
+optimize the performance of \openshmem programs. The \openshmem
+Analyzer, with its comprehensive intra and inter procedural analysis
+information, can be an indispensable assistant for writing, analyzing
+and optimizing \openshmem applications.  The \openshmem Analyzer has an
+interactive component. It provides a graphical user interface using
+HTML to display its graphical displays and for navigating the source
+code and error messages within them.
+
+The \openshmem Analyzer is an on-going research project developed at
+Oak Ridge National Laboratories with funding from DOD. Its
+functionality is based on the OpenUH compiler infrastructure, which is
+maintained by the HPCTools Group at the University of
+Houston. The \openshmem Analyzer is intended to be an open source tool
+available for the \openshmem community.

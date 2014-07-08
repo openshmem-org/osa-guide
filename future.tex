@@ -1,0 +1,52 @@
+\section{Ongoing and Future Work}
+\label{chapter:future}
+
+We plan to develop a stand-alone user interface to present an
+interactive callgraph and control flow graph that are aware of
+\openshmem calls and develop a triage between these different views.
+The idea is that there will be a data flow view that originates from
+\openshmem calls and enables the user to see the use-define chains that
+can help to keep track of the use and definition of pointers in
+\openshmem calls. This will help the user evaluate the placement of a
+particular call and how it is related to the rest of the application
+more intuitively.  In addition, we could develop a view to see how
+symmetric variables are accessed in the entire application, since
+symmetric variables can affect many procedures (e.g.\ global variables,
+interprocedural pointers). These sorts of views are important to
+understand the overall side effects of the application.
+
+The \openshmem Analyzer is moving toward a proper infrastructure to
+perform parallel data flow analysis is needed, and apply the
+state-of-the-art and how this relates to the context of \openshmem. As
+a first step, we will explore the concept of program slicing at the
+process level, which is the process for separating the different
+control flow graphs from different processes. The idea is to simplify
+the control flow graphs of a program per process and correctly denote
+synchronizations across them. Through graph analysis we can classify
+the different process control-flowgraphs into subsets that can be used
+to represent optimizations and where classical program optimizations
+can be applied per SHMEM task.
+
+We plan to explore how to integrate better the \openshmem Analyzer to
+the \openshmem library in a way that is more compiler friendly. We need
+to make sure the library implementation allows the compiler to analyze
+it and optimize it together with the application. This will include
+the inlining of all \openshmem calls, their specialization to the
+application context, constant propagation/dead code elimination, and
+elimination of redundant runtime checks. The \openshmem Analyzer could
+perform checks at compile time and define a set of assertions that we
+can enforce at runtime to make sure the library is run in the right
+context, reducing runtime checks and overheads.
+
+We will also explore how to integrate dynamic information to the
+\openshmem Analyzer. This will mean integrating it with performance
+tools such as TAU and the \openshmem Tracer. We will combine the
+\openshmem Analyzer instrumentation with the \openshmem wrappers of
+these tools to gather calculate frequently executed paths in the
+control graph and callgraph or values of variables at a given point of
+execution. This will help toward feedback and present to the user a
+dynamic callgraph and control flow graph, that shows the execution
+code coverage and the frequently accessed code path that can be
+specialized.
+
+\end{document}
