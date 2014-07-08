@@ -2,7 +2,7 @@ VERSION = 1.0
 
 MAIN = osa
 
-SOURCES = $(wildcard *.tex) osa.bib
+SOURCES = $(wildcard *.tex)
 
 TARGET = $(MAIN)-$(VERSION).pdf
 
@@ -11,15 +11,15 @@ TARGET = $(MAIN)-$(VERSION).pdf
 $(TARGET):	$(MAIN).pdf
 	mv -f $^ $@
 
-%.pdf:	%.tex osa.bib
+%.pdf:	$(SOURCES) osa.bib
 	$(MAKE) clean
 	pdflatex $(MAIN)
-	- bibtex $(MAIN)
+	bibtex $(MAIN)
 	pdflatex $(MAIN)
 	pdflatex $(MAIN)
 
 tidy:
-	rm -f *.aux *.dvi *.log *.out *.toc *.lof
+	rm -f *.aux *.dvi *.log *.out *.toc *.lof *.blg *.bbl
 
 clean:	tidy
 	rm -f *.pdf
