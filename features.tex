@@ -149,9 +149,7 @@ The messages contain the line number and the source file name of the
     program.
   \item Check if there is more than one \openshmem initialization
     call.
-  \item Check if \openshmem calls are using symmetric memory variables
-  \item Check if the \openshmem calls arguments are of the correct
-    types or storage allocation for \openshmem typeless calls.
+  \item Check if \openshmem calls are using symmetric memory variables.
   \item Check for out-of-bounds access for arrays in \openshmem calls.
   \item Check for out-of-bounds strided access of arrays.
   \item Check if one of the arguments of the \openshmem calls
@@ -161,12 +159,15 @@ The messages contain the line number and the source file name of the
     is useful to check if some arguments evaluate to constants or to
     simplify the analysis and accuracy of the tool.
   \item Check if pointers to symmetric data are allocated with
-    shmalloc calls
+    shmalloc calls.
   \item Check if any variables used in expression for pointer
     arithmetic of symmetric variables are initialized.
   \item Check if global pointers to symmetric data are initialized.
   \item Check if pointers to symmetric data are aliased with other
     pointers that can have side-effects to the \openshmem call.
+  \item Check if the \openshmem calls arguments are of the correct
+    types or storage allocation for \openshmem typeless calls.
+
   \end{itemize}
 
 \end{minipage}
