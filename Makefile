@@ -1,15 +1,22 @@
 VERSION = 1.0
 
-TARGET = osa-$(VERSION).pdf
+MAIN = osa
+
+SOURCES = $(wildcard *.tex) osa.bib
+
+TARGET = $(MAIN)-$(VERSION).pdf
 
 .PHONY: all clean tidy
 
-all:	clean	osa.pdf
+$(TARGET):	$(MAIN).pdf
+	mv -f $^ $@
 
-%.pdf:	%.tex
-	pdflatex $*
-	pdflatex $*
-	mv -f $@ $(TARGET)
+%.pdf:	%.tex osa.bib
+	$(MAKE) clean
+	pdflatex $(MAIN)
+	- bibtex $(MAIN)
+	pdflatex $(MAIN)
+	pdflatex $(MAIN)
 
 tidy:
 	rm -f *.aux *.dvi *.log *.out *.toc *.lof
