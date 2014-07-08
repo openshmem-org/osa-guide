@@ -183,7 +183,7 @@ The following shows examples of warning messages output by the tool
   }
 \end{lstlisting}
 \begin{alltt}
-  *** \openshmem Warning: more than one \openshmem initialization call found ***
+  warning: more than one \openshmem initialization call found
 \end{alltt}
 
 \subsubsection{Non-symmetric variable used in \openshmem call}
@@ -196,8 +196,7 @@ The following shows examples of warning messages output by the tool
   }
 \end{lstlisting}
 \begin{alltt}
-  *** \openshmem Warning: non-symmetric variable in arg2 of shmem_long_get 
-  (line=65, file=badget.o) ***
+  badget.c:65: warning: non-symmetric variable in arg2 of shmem_long_get
 \end{alltt}
 
 \subsubsection{Out-of-bounds accesses in \openshmem call}
@@ -215,8 +214,8 @@ The following shows examples of warning messages output by the tool
   }
 \end{lstlisting}
 \begin{alltt}
-  *** \openshmem Warning: out of bounds access of shmem_int_put arg1 of 8 elements 
-  with access of 16 elements (line=20, file=test-bounds.o) ***
+  test-bounds.c:20: warning: out of bounds access of shmem_int_put arg1 of 8
+  elements
 \end{alltt}
 
 \subsubsection{Out-of-bounds accesses in \openshmem call determined with constant propagation (must use -O3)}
@@ -236,8 +235,8 @@ The following shows examples of warning messages output by the tool
   }     
 \end{lstlisting}
 \begin{alltt}
-  *** \openshmem Warning: out of bounds access of shmem_int_put arg1 of 8 elements 
-  with access of 16 elements (line=23, file=test-bounds-constprog.o) ***
+  test-bounds-constprog.c:23: warning: out of bounds access of shmem_int_put
+  arg1 of 8 elements with access of 16 elements
 \end{alltt}
 
 \subsubsection{Out-of-bounds accesses in \openshmem call with strided access}
@@ -252,8 +251,8 @@ The following shows examples of warning messages output by the tool
   }
 \end{lstlisting}
 \begin{alltt}
-  *** \openshmem Warning: out of bounds access of shmem_iget32 arg2 of 7 elements 
-  with access of 14 elements (line=297, file=test_shmem_get_globals.o) ***
+  test_shmem_get_globals.c:297: warning: out of bounds access of shmem_iget32
+  arg2 of 7 elements with access of 14 elements
 \end{alltt}
 
 \subsubsection{Pointer is initialized with the wrong memory allocator (non-symmetric)}
@@ -270,8 +269,8 @@ The following shows examples of warning messages output by the tool
   } 
 \end{lstlisting}
 \begin{alltt}
-  *** \openshmem Warning: variable arg1 of call shmem_float_put is initialized with 
-  malloc, line=35, file=shmem\_heap.o) ***
+  shmem_heap.c:35: warning: variable arg1 of call shmem_float_put is
+  initialized with malloc
 \end{alltt}
 
 \subsubsection{Global Pointer is not initialized}
@@ -286,8 +285,8 @@ The following shows examples of warning messages output by the tool
   }
 \end{lstlisting}
 \begin{alltt}
-  *** \openshmem Warning: global variable arg1 of call shmem_float_put is 
-  uninitialized line=20, file=shmem_heap-global.o) ***
+  shmem_heap-global.c:20: warning: global variable arg1 of call shmem_float_put
+  is uninitialized
 \end{alltt}
 
 \subsubsection{Wrong storage type for typeless \openshmem call}
@@ -302,8 +301,7 @@ The following shows examples of warning messages output by the tool
   }
 \end{lstlisting}
 \begin{alltt}
-  *** \openshmem Warning: wrong storage class of shmem_get32 arg2 of 8 bytes 
-  (line=23, file=test-types.o) ***
+  test-types.c:23: warning: wrong storage class of shmem_get32 arg2 of 8 bytes
 \end{alltt}
 
 \subsubsection{Symmetric variable in the \openshmem call may be aliased with a pointer}
@@ -314,6 +312,6 @@ The following shows examples of warning messages output by the tool
   }
 \end{lstlisting}
 \begin{alltt}
-  *** \openshmem Warning: Symmetric Variable named y in arg1 of \openshmem call 
-  (line=37, file=1_put_afteruse_g.c) may be aliased with the pointer in line 37***
+  1_put_afteruse_g.c:37: warning: Symmmetric Variable named y in arg1 of
+  \openshmem call
 \end{alltt}
