@@ -32,6 +32,41 @@
   language=C,
 }
 
+\lstdefinelanguage{OSH+C}[]{C}{
+  classoffset=1,
+  morekeywords={
+    _SHMEM_BCAST_SYNC_SIZE, _SHMEM_SYNC_VALUE,
+    start_pes,
+    my_pe, _my_pe, shmem_my_pe,
+    num_pes, _num_pes, shmem_n_pes,
+    shmem_int_p, shmem_short_p, shmem_long_p,
+    shmem_int_put, shmem_short_put, shmem_long_put,
+    shmem_float_put, shmem_double_put, shmem_longdouble_put,
+    shmem_int_g, shmem_short_g, shmem_long_g,
+    shmem_int_get, shmem_short_get, shmem_long_get,
+    shmem_float_get, shmem_double_get, shmem_longdouble_get,
+    shmem_put32, shmem_put64,
+    shmem_get32, shmem_get64,
+    shmem_iput32, shmem_iput64,
+    shmem_iget32, shmem_iget64,
+    shmem_barrier_all, shmem_barrier,
+    shmalloc,  shfree, shrealloc,
+    shmem_broadcast32, shmem_broadcast64,
+    shmem_short_inc, shmem_int_inc, shmem_long_inc,
+    shmem_short_add, shmem_int_add, shmem_long_add,
+    shmem_short_finc, shmem_int_finc, shmem_long_finc,
+    shmem_short_fadd, shmem_int_fadd, shmem_long_fadd,
+    shmem_set_lock, shmem_test_lock, shmem_clear_lock,
+    shmem_long_sum_to_all,
+    shmem_complexd_sum_to_all,
+    shmem_ptr,
+  },
+  keywordstyle=\color{DarkOrange}\textbf,
+  classoffset=0,
+  sensitive=true
+}
+
+
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 \usepackage{xspace}

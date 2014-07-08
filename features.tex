@@ -73,7 +73,7 @@ For the edges, callsites to \openshmem are colored:
 Figure~\ref{fig:is-callgraph} shows a portion of a callgraph generated
 for the IS NAS Parallel Benchmark:
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
   \begin{center}
     \includegraphics[width=0.8\textwidth]{./image004}
     \caption{The \openshmem callgraph of the IS NAS parallel benchmark}
@@ -86,7 +86,7 @@ is displayed in figure~\ref{fig:colors}
 
 \vspace{0.1in}
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
   \begin{center}
     \includegraphics[width=0.25\textwidth]{./image006}
     \caption{The Color legend for the callgraph of an \openshmem program}
@@ -100,7 +100,7 @@ in figure~\ref{fig:app-source}.
 
 \vspace{0.1in}
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
   \begin{center}
     \includegraphics[width=0.6\textwidth]{./image008}
     \caption{Application source code as displayed in the browser}
@@ -120,7 +120,7 @@ together with the source code.
 
 \vspace{0.1in}
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
   \begin{center}
     \includegraphics[width=1.0\textwidth]{./image010}
     \caption{Callgraph with the \openshmem Analyzer warning messages.
@@ -175,7 +175,7 @@ The following shows a list of warning messages examples output by the tool
 
 \subsubsection{Multiple \openshmem initialization call}
 
-\begin{lstlisting}
+\begin{lstlisting}[language=OSH+C]
   int main(...)  {                void sub (...) {
       ...                             ...
       start_pes();                    start_pes();       
@@ -188,7 +188,7 @@ The following shows a list of warning messages examples output by the tool
 
 \subsubsection{Non-symmetric variable used in \openshmem call}
 
-\begin{lstlisting}
+\begin{lstlisting}[language=OSH+C]
   int sub(...) {
     long target, source;
     ...
@@ -202,7 +202,7 @@ The following shows a list of warning messages examples output by the tool
 
 \subsubsection{Out of bounds accesses in \openshmem call}
 
-\begin{lstlisting}
+\begin{lstlisting}[language=OSH+C]
   #define N 8
   #define M 8
 
@@ -221,7 +221,7 @@ The following shows a list of warning messages examples output by the tool
 
 \subsubsection{Out of bounds accesses in \openshmem call determined with constant propagation (must use -O3)}
 
-\begin{lstlisting}
+\begin{lstlisting}[language=OSH+C]
   #define N 8
   #define M 8
 
@@ -242,7 +242,7 @@ The following shows a list of warning messages examples output by the tool
 
 \subsubsection{Out of bounds accesses in \openshmem call with strided access}
 
-\begin{lstlisting}
+\begin{lstlisting}[language=OSH+C]
   int src2[N];
   ...
   int sub(...) {
@@ -258,7 +258,7 @@ The following shows a list of warning messages examples output by the tool
 
 \subsubsection{Pointer is not initialized with the wrong memory allocator (non-symmetric)}
 
-\begin{lstlisting}
+\begin{lstlisting}[language=OSH+C]
   int sub(...) {
     ...
     float *y;
@@ -276,7 +276,7 @@ The following shows a list of warning messages examples output by the tool
 
 \subsubsection{Global Pointer is not initialized}
 
-\begin{lstlisting}
+\begin{lstlisting}[language=OSH+C]
   float *y;
 
   int sub(...) {
@@ -292,7 +292,7 @@ The following shows a list of warning messages examples output by the tool
 
 \subsubsection{Wrong storage type for typeless \openshmem call}
 
-\begin{lstlisting}
+\begin{lstlisting}[language=OSH+C]
   long lfrom;
 
   int sub(void) {
@@ -308,7 +308,7 @@ The following shows a list of warning messages examples output by the tool
 
 \subsubsection{Symmetric variable in the \openshmem call may be aliased with a pointer}
 
-\begin{lstlisting}
+\begin{lstlisting}[language=OSH+C]
   int sub(...) {
     ...
   }
