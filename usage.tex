@@ -16,7 +16,7 @@ The first step of preparing a program to be analyzed by the \openshmem
 Analyzer is to compile it using the tool with a special set of
 flags. The user is responsible for modifying the application's
 makefiles, in order to reflect the compiler and flags setting
-changes. Since the \openshmem Analyzer is based on OpenUH the
+changes. Since the \openshmem Analyzer is based on OpenUH, the
 following are the main drivers/compilers:
 
 \vspace{0.1in}
@@ -53,10 +53,10 @@ Note: To avoid long compilation times, the less aggressive
 optimization flag -O2 can be used instead.
 
 In this example, the \openshmem Analyzer will generate a
-series of files with extensions: html, gif, dot, map, msg.
+series of files with extensions html, gif, dot, map, and msg.
 
 This flag will, in future, allow additional information to be passed
-into the analyzer, so that analyses specific to a language or library
+into the Analyzer, so that analyses specific to a language or library
 can be selected.
 
 \subsection{Using the \openshmem Analyzer}
@@ -105,11 +105,11 @@ will generate the following files:
 
 \subsection{How the \openshmem Analyzer works}
 
-The \openshmem analyzer relies on intra-procedural and inter-procedural
+The \openshmem Analyzer relies on intra-procedural and inter-procedural
 analysis to detect potential semantic program errors in the
 application. The types of warnings reported are displayed during the
-different compilation phases of the tool. Figure~\ref{fig:phases} shows
-how the different phases generate the different analyses:
+various compilation phases of the tool. Figure~\ref{fig:phases} shows
+how the different phases generate the analyses:
 
 \begin{figure}[!ht]
   \begin{center}
@@ -122,5 +122,5 @@ how the different phases generate the different analyses:
 The \openshmem Analyzer generates warning messages at different
 compilation stages of the code. The warning messages are then
 displayed at the command line or together in the callgraph.  The
-\openshmem analyzer does not produce an executable file (in future
+\openshmem Analyzer does not produce an executable file (in future
 releases this feature will be enabled).
