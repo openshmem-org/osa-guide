@@ -1,52 +1,48 @@
 \section{Download and Install the \openshmem Analyzer}
 \label{chapter:download}
 
-\subsection{Download}
+\subsection{Download Location}
 
 The project website for the \openshmem Analyzer is:
 
 \begin{center}
-{\small \url{http://www.openshmem.org/OSA}}
+\url{http://www.openshmem.org/OSA}
 \end{center}
 
 \subsection{Installation}
 
-% OpenUH + OSA install instructions go here.
-
-The \openshmem analyzer is available in the following ways:
+The \openshmem Analyzer is available in the following ways:
 
 \subsubsection{Pre-built Executable}
 
-For immediate use, a tarball of the \openshmem analyzer can be
-downloaded from
-
+For immediate use, a tarball of the \openshmem Analyzer, called
 \begin{center}
-{\small \url{http://web.cs.uh.edu/~openuh/download/packages/openuh-3.0.38-x86_64-bin.tar.bz2}}
+\texttt{openuh-3.0.38-x86\_64-bin.tar.bz2}
+\footnote{3.0.38 is the version at time of writing but will change in
+  the future.}
 \end{center}
-
-and then
+can be downloaded via the project website above.  Then
 
 \begin{enumerate}
-\item extract the content of the tarball to a directory, call it
-  \texttt{prefix}.
-\item prepend the directory \texttt{\$prefix/openuh-3.0.38/bin}
-  \footnote{3.0.38 is the version at time of writing but will change
-    in the future.} to your \texttt{PATH}
+\item extract the contents of the tarball to a directory, call it
+  \texttt{prefix};
+\item prepend the directory \texttt{prefix/openuh-3.0.38/bin} to your
+  \texttt{PATH} environment variable.
 \end{enumerate}
-
 
 \subsubsection{Source}
 
-The full source code of the \openshmem analyzer can be downloaded from
-\begin{center}
-{\small \url{http://web.cs.uh.edu/~openuh/download/}}
-\end{center}
-by following the SVN instructions.
+The full source code of the OpenUH compiler containing the \openshmem
+Analyzer can also be downloaded from a repository via the project
+website above.
 
-The \openshmem analyzer will be built when the
-\texttt{-{}-{}enable-osa} configure flag is used.
+Configuration is via the common GNU Autotools \texttt{configure}
+command, so you can build \emph{in situ} or in a separate build
+directory.  The \openshmem Analyzer will be built when the
+\texttt{-{}-{}enable-osa} configure flag is used.  Then do the usual
+\texttt{make}/\texttt{make install} sequence.
 
 \subsubsection{Tool Infrastructure Documentation}
 
 A paper describing the OpenUH compiler that is the infrastructure of
-the \openshmem analyzer is in~\cite{chapman2012experiencesspringer}.
+the \openshmem Analyzer is in~\cite{chapman2012experiencesspringer}.
